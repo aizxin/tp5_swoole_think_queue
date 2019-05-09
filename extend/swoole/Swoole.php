@@ -62,6 +62,7 @@ abstract class Swoole
      */
     protected $option = [];
 
+
     /**
      * 支持的响应事件
      * @var array
@@ -89,6 +90,26 @@ abstract class Swoole
         // 设置参数
         if (!empty($this->option)) {
             $this->swoole->set($this->option);
+        } else {
+            $this->swoole->set([
+                'reactor_num' => 1,
+                // 工作进程
+                'worker_num' => 1,
+                // 守护进程化
+                'daemonize' => false, //调试
+                // 'daemonize' => true,
+                // 监听队列的长度
+                'backlog' => 128,
+                // 异步任务
+                'task_worker_num' => 4,
+                // 防止 PHP 内存溢出
+                'task_max_request' => 0,
+                // // SSL 支持
+                'dispatch_mode' => 2,
+
+                'debug_mode' => 1,
+
+                'log_file'     => Env::get('runtime_path') . 'swoole_server.log']);
         }
 
         // 设置回调
@@ -100,9 +121,6 @@ abstract class Swoole
 
         // 初始化
         $this->init();
-
-        // 启动服务
-        $this->swoole->start();
     }
 
     protected function init()
@@ -113,6 +131,21 @@ abstract class Swoole
         }
     }
 
+    // 启动服务
+    public function start() {
+        // Run worker
+        $this->swoole->start();
+    }
+
+    public function reload() {
+        // 对swoole_websocket_server不起作用
+        $this->swoole->reload();
+    }
+
+    public function close() {
+        // 对swoole_websocket_server不起作用
+        $this->swoole->close();
+    }
 
 
     /**
