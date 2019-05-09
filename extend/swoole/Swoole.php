@@ -15,6 +15,8 @@ use Swoole\Http\Server as HttpServer;
 use Swoole\Server as SwooleServer;
 use Swoole\Websocket\Server as Websocket;
 use swoole\queue\Process as QueueProcess;
+use think\facade\Env;
+
 /**
  * Swoole Server扩展类
  */
@@ -101,9 +103,9 @@ abstract class Swoole
                 // 监听队列的长度
                 'backlog' => 128,
                 // 异步任务
-                'task_worker_num' => 4,
+//                'task_worker_num' => 4,
                 // 防止 PHP 内存溢出
-                'task_max_request' => 0,
+//                'task_max_request' => 0,
                 // // SSL 支持
                 'dispatch_mode' => 2,
 

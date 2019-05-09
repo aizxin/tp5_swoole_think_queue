@@ -13,6 +13,8 @@
 namespace app\index\controller;
 
 
+use think\Queue;
+
 class Test
 {
     public function index()

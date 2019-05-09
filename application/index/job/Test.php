@@ -14,11 +14,14 @@ class Test
     */
     public function fire(Job $job,$data){
         $isJobDone = $this->doOrderJob($data);
+        var_dump($isJobDone);
         if ($isJobDone) {
             //如果任务执行成功， 记得删除任务
             $job->delete();
         }else{
+            var_dump($job->attempts());
             if ($job->attempts() > 3) {
+
                 //通过这个方法可以检查这个任务已经重试了几次了
                 // 也可以重新发布这个任务
                 $job->delete();
@@ -35,7 +38,7 @@ class Test
     public function doOrderJob($data) {
         // 根据消息中的数据进行实际的业务处理...      
         Log::info('doOrderJob'.json_encode($data));
-        return false;
+        return true;
     }
     /**
      * 该方法用于接收任务执行失败的通知，你可以发送邮件给相应的负责人员

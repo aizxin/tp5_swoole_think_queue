@@ -57,6 +57,7 @@ class Process extends Queue
     {
         $worker = new Worker();
         $worker->pop($key, $val['delay'], $val['sleep'], $val['maxTries']);
+
         unset($worker);
     }
 }

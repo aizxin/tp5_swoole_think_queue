@@ -40,7 +40,7 @@ class Process extends Queue
                 $index = $this->new_index;
                 $this->new_index++;
             }
-            \swoole_set_process_name(sprintf('php-ps:%s', $index));
+//            \swoole_set_process_name(sprintf('php-ps:%s', $index));
 
             while (true) {
                 $this->job($key, $val);
