@@ -12,5 +12,5 @@
  */
 
 return [
-    '*/5 * * * * *' => '\\app\\lib\\Timer',
+    '*/5 * * * * *' => \app\index\timer\TestTimer::class,
 ];

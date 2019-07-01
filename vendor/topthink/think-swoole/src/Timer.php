@@ -27,6 +27,7 @@ class Timer
     public function __construct()
     {
         //获取配置信息
+        Config::setYaconf(false);
         $this->config = Config::pull('timer');
 
         if (empty($this->config)) {

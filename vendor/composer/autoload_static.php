@@ -7,8 +7,8 @@ namespace Composer\Autoload;
 class ComposerStaticInit40cba6018b8da5af291dc89eeedd4d73
 {
     public static $files = array (
-        'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         '9b552a3cc426e3287cc811caefa3cf53' => __DIR__ . '/..' . '/topthink/think-helper/src/helper.php',
+        'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         'cc56288302d9df745d97c934d6a6e5f0' => __DIR__ . '/..' . '/topthink/think-queue/src/common.php',
         'ea51e7f80936725691663347d5b38bd9' => __DIR__ . '/..' . '/topthink/think-swoole/src/command.php',
     );
@@ -20,6 +20,10 @@ class ComposerStaticInit40cba6018b8da5af291dc89eeedd4d73
             'think\\helper\\' => 13,
             'think\\composer\\' => 15,
             'think\\' => 6,
+        ),
+        'j' => 
+        array (
+            'jayazhao\\' => 9,
         ),
         'a' => 
         array (
@@ -38,6 +42,18 @@ class ComposerStaticInit40cba6018b8da5af291dc89eeedd4d73
         'P' => 
         array (
             'PhpParser\\' => 10,
+            'PhpAmqpLib\\' => 11,
+        ),
+        'I' => 
+        array (
+            'Interop\\Queue\\' => 14,
+            'Interop\\Amqp\\' => 13,
+        ),
+        'E' => 
+        array (
+            'Enqueue\\Dsn\\' => 12,
+            'Enqueue\\AmqpTools\\' => 18,
+            'Enqueue\\AmqpLib\\' => 16,
         ),
     );
 
@@ -57,6 +73,10 @@ class ComposerStaticInit40cba6018b8da5af291dc89eeedd4d73
         'think\\' => 
         array (
             0 => __DIR__ . '/..' . '/topthink/think-queue/src',
+        ),
+        'jayazhao\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jayazhao/think-queue-rabbitmq/src',
         ),
         'app\\' => 
         array (
@@ -81,6 +101,30 @@ class ComposerStaticInit40cba6018b8da5af291dc89eeedd4d73
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
+        'PhpAmqpLib\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib',
+        ),
+        'Interop\\Queue\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/queue-interop/queue-interop/src',
+        ),
+        'Interop\\Amqp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/queue-interop/amqp-interop/src',
+        ),
+        'Enqueue\\Dsn\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/enqueue/dsn',
+        ),
+        'Enqueue\\AmqpTools\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/enqueue/amqp-tools',
+        ),
+        'Enqueue\\AmqpLib\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/enqueue/amqp-lib',
         ),
     );
 
